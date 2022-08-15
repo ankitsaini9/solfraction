@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/solfraction/static/css/main.0ef9d7f4.css",
+    "main.js": "/solfraction/static/js/main.46641b45.js",
+    "static/js/787.cf445318.chunk.js": "/solfraction/static/js/787.cf445318.chunk.js",
+    "static/media/bg.jpeg": "/solfraction/static/media/bg.bc5ffe2bbb149f75060c.jpeg",
+    "static/media/logo.png": "/solfraction/static/media/logo.04cb5ef0a41429993587.png",
+    "index.html": "/solfraction/index.html",
+    "main.0ef9d7f4.css.map": "/solfraction/static/css/main.0ef9d7f4.css.map",
+    "main.46641b45.js.map": "/solfraction/static/js/main.46641b45.js.map",
+    "787.cf445318.chunk.js.map": "/solfraction/static/js/787.cf445318.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0ef9d7f4.css",
+    "static/js/main.46641b45.js"
+  ]
+}
