@@ -116,7 +116,7 @@ function App() {
       <Container fluid className="con">
         <Row className='justify-content-center text-center'>
           <Col className='mb-3 justify-content-center text-center'>
-            <a href="https://lavishlions.io/">
+            <a href="#">
               <img
                 src={logo}
                 width="300"
