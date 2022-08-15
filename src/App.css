@@ -1,8 +1,11 @@
 main{
   background: linear-gradient(56deg, #090a0a42 12%, #00000045 78%);
-  box-shadow: 0 0 8px 2px #265258;
+  /* box-shadow: 0 0 8px 2px #265258; */
   border-radius: 14px;
   padding: 50px;
+  height:auto;
+  min-height:100vh;
+  height:auto !important;        /* for IE as it does not support min-height */
 }
 
 
