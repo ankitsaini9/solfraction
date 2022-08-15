@@ -1,0 +1,48 @@
+main{
+  background: linear-gradient(56deg, #090a0a42 12%, #00000045 78%);
+  box-shadow: 0 0 8px 2px #265258;
+  border-radius: 14px;
+  padding: 50px;
+}
+
+
+.nftBox{
+  margin: 20px 10px;
+  background: #000000;
+  /* background: linear-gradient(225deg, #1ee0af42 12%, #c055ee45 78%); */
+  padding: 25px;
+  box-shadow: 0 0 8px 2px #ffffff;
+  align-items: center;
+  border-radius: 14px;
+  /* flex-direction: column; */
+  height: auto;
+  width: 300px;
+}
+
+.stakeButton{
+  width: 100%;
+}
+.white{
+  color: white;
+}
+.token{
+  margin-left: 20px;
+}
+.hr{
+  border: none;
+  height: 5px;
+  /* Set the hr color */
+  color: rgb(255, 255, 255); /* old IE */
+}
+.con{
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.connect-wallet{
+  float: right;
+  margin-top: -150px;
+}
+.last-div{
+  padding-bottom: 100px;
+}
