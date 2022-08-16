@@ -160,7 +160,7 @@ function App() {
                   <h6 className="white" >RESERVE TOKENS</h6>
                 </div>
                 <Button 
-                  onClick = {() => init_fraction(pubKey,mint,amount,amount1)}
+                  onClick = {() => init_fraction(pubKey, nft.mint, amount, amount1)}
                   variant="outline-warning" 
                   className="stakeButton"
                 >
@@ -202,7 +202,7 @@ function App() {
                   <h6 className="white" >BUY FRACTION</h6>
                 </div>
                 <Button 
-                  onClick = {() => buy_tokens(pubKey,amount,amount1)}
+                  onClick = {() => buy_tokens(pubKey, amount, amount1)}
                   variant="outline-warning" 
                   className="stakeButton"
                 >
