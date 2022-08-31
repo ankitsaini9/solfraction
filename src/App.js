@@ -116,7 +116,7 @@ function App() {
       <Container fluid className="con">
         <Row className='justify-content-center text-center'>
           <Col className='mb-3 justify-content-center text-center'>
-            <a href="#">
+            {/* <a href="#"> */}
               <img
                 src={logo}
                 width="300"
@@ -124,7 +124,7 @@ function App() {
                 className="d-inline-block align-top"
                 alt="React Bootstrap logo"
                 />
-            </a>
+            {/* </a> */}
           </Col>
             <div>
             <Button variant="primary" size="lg" onClick = {connectWallet} className="connect-wallet">Connect Wallet</Button>
