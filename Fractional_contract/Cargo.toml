@@ -1,0 +1,25 @@
+[package]
+name = "fractional_contract"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[features]
+no-entrypoint = []
+
+[dependencies]
+solana-program = "1.9.2"
+arrayref = "0.3.6"
+spl-token = {version = "3.3.0", features = ["no-entrypoint"]}
+spl-associated-token-account = {version = "1.0.3", features = ["no-entrypoint"]}
+enum_dispatch = "0.3.7"
+num-derive = "0.3"
+num-traits = "0.2"
+thiserror = "1.0"
+
+[dev-dependencies]
+solana-sdk='1.9.26'
+
+
+[lib]
+crate-type = ["cdylib", "lib"]

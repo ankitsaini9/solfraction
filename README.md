@@ -1,3 +1,6 @@
+# NFT Fractionalization 
+This reposistory contains the Frontend code for the Solana NFT fractionalization code for solfraction. with the packages meant to be published in this directory. Newly developed packages may not be published yet.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -30,6 +33,9 @@ Your app is ready to be deployed!
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ### `npm run eject`
+
+To navigate to Contract Folder.
+### `cd Fractional_contract`
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
