@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./MainNavbar.css";
-import logo from "../images/logo.png";
-import Knob from "../images/knob.svg";
+import logo from "../assets/images/logo.png";
+import knob from "../assets/icons/knob.svg";
+import buySellIcon from "../assets/icons/buySellIcon.svg";
+import fracNftIcon from "../assets/icons/fracNftIcon.svg";
+import sendTokensIcon from "../assets/icons/sendTokensIcon.svg";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
@@ -84,18 +87,64 @@ const MainNavbar = () => {
           </Form>
 
           <NavDropdown
+            align="end"
+            flip={true}
+            menuRole="menu"
             className="knob-btn"
             title={
               <Button className="ms-2" variant="outline-success">
-                <img alt="" src={Knob}></img>
+                <img alt="" src={knob}></img>
               </Button>
             }
           >
-            <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-            <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action5">
-              Something else here
+            <NavDropdown.Item
+              className="d-flex align-items-center"
+              as={Link}
+              to="/fractionalize"
+            >
+              <div className="me-3">
+                <img alt="" src={fracNftIcon}></img>
+              </div>
+              <div>
+                <h5 className="fs-6">Fractionalize NFTs</h5>
+                <p className="text-muted">
+                  Choose the NFT(s) you own and send them to a new
+                  <br></br>
+                  curated vault to be fractionalized
+                </p>
+              </div>
+            </NavDropdown.Item>
+
+            <NavDropdown.Item
+              className="d-flex align-items-center"
+              as={Link}
+              to="/buy"
+            >
+              <div className="me-3">
+                <img alt="" src={buySellIcon}></img>
+              </div>
+              <div>
+                <h5 className="fs-6">Buy &amp; sell tokens</h5>
+                <p className="text-muted">
+                  Buy other crypto assets with your crypto assets
+                </p>
+              </div>
+            </NavDropdown.Item>
+
+            <NavDropdown.Item
+              className="d-flex align-items-center"
+              as={Link}
+              to=""
+            >
+              <div className="me-3">
+                <img alt="" src={sendTokensIcon}></img>
+              </div>
+              <div>
+                <h5 className="fs-6">Send token</h5>
+                <p className="text-muted">
+                  Send tokens to one or multiple wallet addresses
+                </p>
+              </div>
             </NavDropdown.Item>
           </NavDropdown>
           {walletConnected ? (

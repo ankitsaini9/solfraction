@@ -1,3 +1,7 @@
 .knob-btn .dropdown-toggle::after {
   display: none;
 }
+
+.knob-btn .dropdown-menu {
+  max-width: 450px;
+}

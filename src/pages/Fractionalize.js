@@ -10,19 +10,19 @@ import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import ETHIcon from "../images/ETHIcon.svg";
+import ETHIcon from "../assets/icons/ETHIcon.svg";
 import InputGroup from "react-bootstrap/InputGroup";
 
 const Fractionalize = () => {
   const pubKey = useSelector((state) => state.nft.pubKey);
   const selectedNfts = useSelector((state) => state.nft.selectedNfts);
 
-  console.log(pubKey);
+  console.log("pk=>", pubKey);
   const [nftData, setNftData] = useState([]);
 
   useEffect(() => {
     //do operation on state change
-    if (pubKey) {
+    if (pubKey && Object.keys(pubKey).length) {
       getNftData(pubKey);
     } else {
       console.log("public key not found");
@@ -31,7 +31,7 @@ const Fractionalize = () => {
 
   const getNftData = async (publicKey) => {
     let nftData = await getNft(publicKey);
-    console.log(nftData);
+    console.log("nft data => ", nftData);
     let nftMintName = [];
     nftData.map(async (nft) => {
       let res = await fetch(nft.data.uri);
@@ -41,7 +41,7 @@ const Fractionalize = () => {
         mint: nft.mint,
         image: data.image,
       };
-      console.log(nftObj);
+      console.log("nft data => ", nftObj);
       nftMintName.push(nftObj);
       setNftData([...nftMintName]);
       // console.log("wallet's nft ", nftMintName);
@@ -49,7 +49,6 @@ const Fractionalize = () => {
   };
 
   const getNft = async (publicKey) => {
-    console.log("working");
     let connection = new Connection(clusterApiUrl("devnet"), "confirmed");
     let response = await connection.getParsedTokenAccountsByOwner(publicKey, {
       programId: TOKEN_PROGRAM_ID,
@@ -110,13 +109,22 @@ const Fractionalize = () => {
 
               <Form>
                 <Form.Group className="mb-3" controlId="vaultName">
-                  <Form.Label>Vault Name</Form.Label>
-                  <Form.Control type="text" placeholder="e.g 'Crytppunk'" />
+                  <Form.Label className="text-muted f-14">
+                    Vault Name
+                  </Form.Label>
+                  <Form.Control
+                    type="text"
+                    required
+                    placeholder="e.g 'Crytppunk'"
+                  />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="tokenSupply">
-                  <Form.Label>Token Supply</Form.Label>
+                  <Form.Label className="text-muted f-14">
+                    Token Supply
+                  </Form.Label>
                   <Form.Control
+                    required
                     type="number"
                     placeholder="10000"
                     // value="10000"
@@ -124,21 +132,27 @@ const Fractionalize = () => {
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="tokenSymbol">
-                  <Form.Label>Token Symbol</Form.Label>
-                  <Form.Control type="text" placeholder="CPF" />
+                  <Form.Label className="text-muted f-14">
+                    Token Symbol
+                  </Form.Label>
+                  <Form.Control type="text" required placeholder="CPF" />
                 </Form.Group>
 
-                <Form.Label>Reserve proce in ETH</Form.Label>
+                <Form.Label className="text-muted f-14">
+                  Reserve proce in ETH
+                </Form.Label>
                 <InputGroup className="mb-3">
                   <InputGroup.Text id="ETHIcon">
                     <img alt="" src={ETHIcon}></img>
                   </InputGroup.Text>
 
-                  <Form.Control type="number" placeholder="0.0" />
+                  <Form.Control required type="number" placeholder="0.0" />
                 </InputGroup>
 
-                <Form.Label>Annual Management fee</Form.Label>
-                <Form.Range max={10} min={0} />
+                <Form.Label className="text-muted f-14">
+                  Annual Management fee
+                </Form.Label>
+                <Form.Range required max={10} min={0} />
                 <div className="d-flex justify-content-between mb-2">
                   <small>
                     <span id="minP">0%</span>
@@ -148,9 +162,7 @@ const Fractionalize = () => {
                   </small>
                 </div>
                 <div className="d-grid m-2">
-                  <Button variant="success" disabled>
-                    Continue
-                  </Button>
+                  <Button variant="success">Continue</Button>
                 </div>
               </Form>
             </Card.Body>

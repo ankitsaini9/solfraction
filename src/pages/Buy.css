@@ -1,0 +1,21 @@
+.mt-100 {
+  margin-top: 100px;
+}
+.buyCard {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0px 12px 40px rgba(31, 47, 70, 0.08);
+  max-width: 500px;
+  padding: 30px;
+  margin-inline: auto;
+  margin-top: 50px;
+}
+.slippage {
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 20px;
+  background-color: aliceblue;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+}

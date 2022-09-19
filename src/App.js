@@ -4,6 +4,7 @@ import Collections from "./pages/Collections";
 import Fractionalize from "./pages/Fractionalize";
 import Explore from "./pages/Explore";
 import Home from "./pages/Home";
+import Buy from "./pages/Buy";
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
         <Route path="/explore" element={<Explore />} />
         <Route path="/collections" element={<Collections />} />
         <Route path="/fractionalize" element={<Fractionalize />} />
+        <Route path="/buy" element={<Buy />} />
       </Routes>
     </BrowserRouter>
   );
