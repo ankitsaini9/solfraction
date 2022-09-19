@@ -88,7 +88,6 @@ const MainNavbar = () => {
 
           <NavDropdown
             align="end"
-            flip={true}
             menuRole="menu"
             className="knob-btn"
             title={

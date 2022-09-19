@@ -2,13 +2,11 @@
   margin-top: 100px;
 }
 .buyCard {
-  background-color: #fff;
-  border-radius: 15px;
-  box-shadow: 0px 12px 40px rgba(31, 47, 70, 0.08);
   max-width: 500px;
   padding: 30px;
   margin-inline: auto;
   margin-top: 50px;
+  position: relative;
 }
 .slippage {
   font-size: 14px;
@@ -18,4 +16,20 @@
   padding: 5px 10px;
   display: flex;
   align-items: center;
+  cursor: pointer;
+}
+.bb {
+  border-bottom: 2px solid rgba(143, 151, 163, 0.15);
+}
+.slippageModal {
+  position: absolute;
+  top: 15%;
+  right: 6%;
+  z-index: 100;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+}
+.slippageModal .btn-toolbar .input-group {
+  width: 130px;
 }
