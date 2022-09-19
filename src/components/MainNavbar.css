@@ -1,0 +1,3 @@
+.knob-btn .dropdown-toggle::after {
+  display: none;
+}
