@@ -4,7 +4,7 @@ import Form from "react-bootstrap/Form";
 import setting from "../assets/icons/setting.svg";
 import InputGroup from "react-bootstrap/InputGroup";
 import "./Buy.css";
-import AppCard from "../components/AppCard";
+import { AppCard } from "../components/AppCard";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import ButtonToolbar from "react-bootstrap/ButtonToolbar";
 import { useState } from "react";
