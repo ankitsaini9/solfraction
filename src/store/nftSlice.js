@@ -14,13 +14,11 @@ export const nftSlice = createSlice({
     },
     setSelectedNfts: (state, action) => {
       const index = state.selectedNfts.findIndex(
-        (n) => n.image === action.payload
+        (n) => n.mint === action.payload.mint
       );
       if (index !== -1) {
-        state.selectedNfts = state.selectedNfts.filter(
-          (n) => n.image !== action.payload
-        );
-      } else state.selectedNfts.push({ image: action.payload, isActive: true });
+        state.selectedNfts.splice(index, 1);
+      } else state.selectedNfts.push(action.payload);
     },
   },
 });

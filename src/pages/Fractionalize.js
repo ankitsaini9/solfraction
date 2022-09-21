@@ -84,7 +84,7 @@ const Fractionalize = () => {
           <Row xs={1} md={2} className="g-0 gap-2">
             {nftData.map((nft) => (
               <NftCard
-                active={selectedNfts.some((n) => n.image === nft.image)}
+                mint={nft.mint}
                 name={nft.name}
                 image={nft.image}
               ></NftCard>
@@ -95,7 +95,7 @@ const Fractionalize = () => {
           <Card>
             <Card.Body>
               <Card.Title>vault details</Card.Title>
-              <div className="d-flex gap-2">
+              <div className="d-flex gap-2 flex-wrap">
                 {selectedNfts.map((nft) => (
                   <div>
                     <img height={50} width={50} alt="" src={nft.image}></img>

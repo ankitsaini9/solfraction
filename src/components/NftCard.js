@@ -9,7 +9,7 @@ const NftCard = (props) => {
   const dispatch = useDispatch();
 
   const clickHandler = () => {
-    dispatch(setSelectedNfts(props.image));
+    dispatch(setSelectedNfts(props));
     setSelected((state) => !state);
   };
   return (
