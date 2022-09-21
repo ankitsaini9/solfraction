@@ -16,7 +16,6 @@ export const nftSlice = createSlice({
       const index = state.selectedNfts.findIndex(
         (n) => n.image === action.payload
       );
-      console.log(index);
       if (index !== -1) {
         state.selectedNfts = state.selectedNfts.filter(
           (n) => n.image !== action.payload

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./MainNavbar.css";
 import logo from "../assets/images/logo.png";
@@ -19,7 +19,7 @@ const MainNavbar = () => {
   const [walletConnected, setWalletConnected] = useState(false);
   const dispatch = useDispatch();
 
-  const connectWallet = async () => {
+  const connectWallet = useCallback(async () => {
     const provider = await window.solana;
     console.log(provider);
     if (provider) {
@@ -31,7 +31,11 @@ const MainNavbar = () => {
       setWalletConnected(true);
       dispatch(setPubKey(provider.publicKey));
     } else window.open("https://phantom.app/", "_blank");
-  };
+  }, [dispatch]);
+
+  useEffect(() => {
+    connectWallet();
+  }, [connectWallet]);
 
   return (
     <Navbar bg="light" expand="lg" sticky="top">

@@ -22,56 +22,52 @@ const Fractionalize = () => {
 
   useEffect(() => {
     //do operation on state change
+    const getNftData = async (publicKey) => {
+      let connection = new Connection(clusterApiUrl("devnet"), "confirmed");
+      let response = await connection.getParsedTokenAccountsByOwner(publicKey, {
+        programId: TOKEN_PROGRAM_ID,
+      });
+      let mints = await Promise.all(
+        response.value
+          .filter(
+            (accInfo) =>
+              accInfo.account.data.parsed.info.tokenAmount.uiAmount !== 0
+          )
+          .map((accInfo) =>
+            getMetadataAccount(accInfo.account.data.parsed.info.mint)
+          )
+      );
+      let mintPubkeys = mints.map((m) => new PublicKey(m));
+      let multipleAccounts = await connection.getMultipleAccountsInfo(
+        mintPubkeys
+      );
+      const nftData = multipleAccounts
+        .filter((account) => account !== null)
+        .map((account) => decodeMetadata(account.data));
+
+      console.log("nft data => ", nftData);
+      let nftMintName = [];
+      nftData.map(async (nft) => {
+        let res = await fetch(nft.data.uri);
+        let data = await res.json();
+        let nftObj = {
+          name: nft.data.name,
+          mint: nft.mint,
+          image: data.image,
+        };
+        console.log("nft data => ", nftObj);
+        nftMintName.push(nftObj);
+        setNftData([...nftMintName]);
+        // console.log("wallet's nft ", nftMintName);
+      });
+    };
+
     if (pubKey && Object.keys(pubKey).length) {
       getNftData(pubKey);
     } else {
       console.log("public key not found");
     }
-  }, [pubKey, selectedNfts]);
-
-  const getNftData = async (publicKey) => {
-    let nftData = await getNft(publicKey);
-    console.log("nft data => ", nftData);
-    let nftMintName = [];
-    nftData.map(async (nft) => {
-      let res = await fetch(nft.data.uri);
-      let data = await res.json();
-      let nftObj = {
-        name: nft.data.name,
-        mint: nft.mint,
-        image: data.image,
-      };
-      console.log("nft data => ", nftObj);
-      nftMintName.push(nftObj);
-      setNftData([...nftMintName]);
-      // console.log("wallet's nft ", nftMintName);
-    });
-  };
-
-  const getNft = async (publicKey) => {
-    let connection = new Connection(clusterApiUrl("devnet"), "confirmed");
-    let response = await connection.getParsedTokenAccountsByOwner(publicKey, {
-      programId: TOKEN_PROGRAM_ID,
-    });
-    let mints = await Promise.all(
-      response.value
-        .filter(
-          (accInfo) =>
-            accInfo.account.data.parsed.info.tokenAmount.uiAmount !== 0
-        )
-        .map((accInfo) =>
-          getMetadataAccount(accInfo.account.data.parsed.info.mint)
-        )
-    );
-    let mintPubkeys = mints.map((m) => new PublicKey(m));
-    let multipleAccounts = await connection.getMultipleAccountsInfo(
-      mintPubkeys
-    );
-    let nftMetadata = multipleAccounts
-      .filter((account) => account !== null)
-      .map((account) => decodeMetadata(account.data));
-    return nftMetadata;
-  };
+  }, [pubKey]);
 
   return (
     <Container className="mt-3">

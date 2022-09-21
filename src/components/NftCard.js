@@ -2,12 +2,15 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { useDispatch } from "react-redux";
 import { setSelectedNfts } from "../store/nftSlice";
+import { useState } from "react";
 
 const NftCard = (props) => {
+  const [selected, setSelected] = useState(false);
   const dispatch = useDispatch();
 
   const clickHandler = () => {
     dispatch(setSelectedNfts(props.image));
+    setSelected((state) => !state);
   };
   return (
     <Card style={{ width: "12rem" }}>
@@ -17,7 +20,7 @@ const NftCard = (props) => {
       </Card.Body>
       <div className="d-grid m-2">
         <Button
-          active={props.active}
+          active={selected}
           onClick={clickHandler}
           variant="outline-success"
         >
