@@ -1,19 +1,26 @@
 import { Card } from "react-bootstrap";
 import "./CollectionNft.css";
 import verified from "../assets/icons/verified.svg";
+import { useNavigate } from "react-router-dom";
 
 export const CollectionNft = (props) => {
+  const navigate = useNavigate();
+
+  const showNftDetails = () => {
+    navigate(`/collections/${props.title}`);
+  };
+
   return (
-    <Card className="collectionNft">
-      <Card.Img src={props.bgImage} />
+    <Card className="collectionNft" onClick={showNftDetails}>
+      <Card.Img alt="" className="center-cropped" src={props.bgImage} />
       <div className="avatar">
-        <img src={props.avatar}></img>
+        <img alt="" src={props.avatar}></img>
       </div>
       <Card.Body>
-        <Card.Title className="text-center mt-3">
+        <Card.Title className="text-center mt-5">
           {props.title}
           <span className="ms-2">
-            <img src={verified}></img>
+            <img alt="" src={verified}></img>
           </span>
         </Card.Title>
         <div className="bb my-3"></div>

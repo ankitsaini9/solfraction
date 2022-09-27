@@ -1,15 +1,14 @@
-main{
+main {
   background: linear-gradient(56deg, #090a0a42 12%, #00000045 78%);
   /* box-shadow: 0 0 8px 2px #265258; */
   border-radius: 14px;
   padding: 50px;
-  height:auto;
-  min-height:100vh;
-  height:auto !important;        /* for IE as it does not support min-height */
+  height: auto;
+  min-height: 100vh;
+  height: auto !important; /* for IE as it does not support min-height */
 }
 
-
-.nftBox{
+.nftBox {
   margin: 20px 10px;
   background: #000000;
   /* background: linear-gradient(225deg, #1ee0af42 12%, #c055ee45 78%); */
@@ -22,30 +21,30 @@ main{
   width: 300px;
 }
 
-.stakeButton{
+.stakeButton {
   width: 100%;
 }
-.white{
+.white {
   color: white;
 }
-.token{
+.token {
   margin-left: 20px;
 }
-.hr{
+.hr {
   border: none;
   height: 5px;
   /* Set the hr color */
   color: rgb(255, 255, 255); /* old IE */
 }
-.con{
+.con {
   padding-left: 100px;
   padding-right: 100px;
 }
 
-.connect-wallet{
+.connect-wallet {
   float: right;
   margin-top: -150px;
 }
-.last-div{
+.last-div {
   padding-bottom: 100px;
 }

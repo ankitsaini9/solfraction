@@ -3,13 +3,22 @@
   position: relative;
   background-color: #fff;
   box-shadow: 0px 12px 40px rgba(31, 47, 70, 0.08);
-  border: none;
+  border: none !important;
+  border-radius: 25px !important;
+  cursor: pointer;
+}
+.collectionNft .center-cropped {
+  object-fit: cover; /* Do not scale the image */
+  object-position: center; /* Center the image within the element */
+  height: 140px;
+  width: 100%;
+  border-radius: 25px 25px 0 0 !important;
 }
 .collectionNft .avatar {
-  width: 50px;
+  width: 72px;
   position: absolute;
-  left: calc(50% - 25px);
-  top: 55px;
+  left: calc(50% - 36px);
+  top: 105px;
   background-color: #fff;
   border-radius: 50%;
 }

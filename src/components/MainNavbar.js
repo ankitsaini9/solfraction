@@ -38,7 +38,7 @@ const MainNavbar = () => {
   }, [connectWallet]);
 
   return (
-    <Navbar bg="light" expand="lg" sticky="top">
+    <Navbar bg="white" expand="lg" sticky="top">
       <Container fluid>
         <Navbar.Brand>
           <Link to="/">
@@ -54,7 +54,7 @@ const MainNavbar = () => {
         <Navbar.Collapse id="navbar">
           <Nav className="me-auto my-2 my-lg-0">
             <Nav.Link as={Link} to="/explore">
-              Home
+              Explore
             </Nav.Link>
             <Nav.Link as={Link} to="/collections">
               Collections

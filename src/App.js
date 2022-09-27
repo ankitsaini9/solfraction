@@ -5,6 +5,7 @@ import Fractionalize from "./pages/Fractionalize";
 import Explore from "./pages/Explore";
 import Home from "./pages/Home";
 import Buy from "./pages/Buy";
+import CollectionDetails from "./pages/CollectionDetails";
 
 export default function App() {
   return (
@@ -14,6 +15,10 @@ export default function App() {
         <Route index element={<Home />} />
         <Route path="/explore" element={<Explore />} />
         <Route path="/collections" element={<Collections />} />
+        <Route
+          path="/collections/:collection"
+          element={<CollectionDetails />}
+        />
         <Route path="/fractionalize" element={<Fractionalize />} />
         <Route path="/buy" element={<Buy />} />
       </Routes>

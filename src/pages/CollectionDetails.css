@@ -1,0 +1,24 @@
+.collection .banner {
+  width: 100%;
+  height: 320px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.collection .detail {
+  margin-top: -95px;
+}
+.collection .detail .avatar {
+  width: 136px;
+  border-radius: 100%;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  background: #fff;
+}
+.collection .detail .pill-shape {
+  border-radius: 30px;
+  background: white;
+  padding: 5px 10px;
+}
+.collection .detail .avatar img {
+  width: 100%;
+  border-radius: 50%;
+}
