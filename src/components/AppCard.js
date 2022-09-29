@@ -1,5 +1,7 @@
 import "./AppCard.css";
 
-export const AppCard = (props) => {
+const AppCard = (props) => {
   return <div className={`appCard ${props.className}`}>{props.children}</div>;
 };
+
+export default AppCard;
