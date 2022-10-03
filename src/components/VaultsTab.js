@@ -3,8 +3,47 @@ import Col from "react-bootstrap/Col";
 import Accordion from "react-bootstrap/Accordion";
 import "./VaultsTab.css";
 import Form from "react-bootstrap/Form";
+import { CollectionDetailsNftCard } from "./CollectionDetailsNftCard";
 
 const VaultsTab = () => {
+  const dummyData = [
+    {
+      bgImage:
+        "https://lh3.googleusercontent.com/O7g_mzJZPDlAlXM2Hi2exAtoF25wJPXCwaPwpP5dbfp_IEKmddITYQLFBQPmaIoisXhaZIGVvo0eB00oQCxiGmY1Pu2PoeOl4jPK=s250",
+      count: 1,
+      varifiedStatus: "varified",
+      collectionName: "zora",
+      nftName: "ice cream girl",
+      address: "0x9Adf...493c",
+      fraction: "10K",
+      collectionSupply: 99.02,
+      impliedValuation: "1.02K",
+    },
+    {
+      bgImage:
+        "https://lh3.googleusercontent.com/eseF_p4TBPq0Jauf99fkm32n13Xde_Zgsjdfy6L450YZaEUorYtDmUUHBxcxnC21Sq8mzBJ6uW8uUwYCKckyChysBRNvrWyZ6uSx=s250",
+      count: 1,
+      varifiedStatus: "varified",
+      collectionName: "zora",
+      nftName: "ice cream girl",
+      address: "0x9Adf...493c",
+      fraction: "10K",
+      collectionSupply: 99.02,
+      impliedValuation: "1.02K",
+    },
+    {
+      bgImage:
+        "https://lh3.googleusercontent.com/O7g_mzJZPDlAlXM2Hi2exAtoF25wJPXCwaPwpP5dbfp_IEKmddITYQLFBQPmaIoisXhaZIGVvo0eB00oQCxiGmY1Pu2PoeOl4jPK=s250",
+      count: 1,
+      varifiedStatus: "varified",
+      collectionName: "zora",
+      nftName: "ice cream girl",
+      address: "0x9Adf...493c",
+      fraction: "10K",
+      collectionSupply: 99.02,
+      impliedValuation: "1.02K",
+    },
+  ];
   return (
     <Row>
       <Col md={4}>
@@ -134,7 +173,25 @@ const VaultsTab = () => {
           </Accordion.Item>
         </Accordion>
       </Col>
-      <Col md={8}>gdsg</Col>
+      <Col md={8}>
+        <Row xs={1} md={2} className="g-4">
+          {dummyData.map((data) => (
+            <Col>
+              <CollectionDetailsNftCard
+                bgImage={data.bgImage}
+                count={data.count}
+                varifiedStatus={data.varifiedStatus}
+                collectionName={data.collectionName}
+                nftName={data.nftName}
+                address={data.address}
+                fraction={data.fraction}
+                collectionSupply={data.collectionSupply}
+                impliedValuation={data.impliedValuation}
+              ></CollectionDetailsNftCard>
+            </Col>
+          ))}
+        </Row>
+      </Col>
     </Row>
   );
 };

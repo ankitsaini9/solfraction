@@ -1,0 +1,30 @@
+.collectionDetailsNftCard {
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+.collectionDetailsNftCard .top {
+  position: absolute;
+  top: 0;
+  padding: 10px;
+  width: 100%;
+  font-size: 12px;
+}
+.collectionDetailsNftCard .address {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: rgba(244, 245, 246, 1);
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 12px;
+}
+.collectionDetailsNftCard .bgImage {
+  height: 356px;
+  width: 100%;
+}
+.collectionDetailsNftCard .bgImage img {
+  width: 100%;
+  object-fit: contain;
+  height: 100%;
+  object-position: bottom;
+}
